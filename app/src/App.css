@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+.card{
+  margin: 5px;
+  width: 45%;
+  background-color: aquamarine;
+  
+}
