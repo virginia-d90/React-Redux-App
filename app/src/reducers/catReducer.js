@@ -3,6 +3,7 @@ import {FETCH_DATA, UPDATE_FACTS, SET_ERROR } from "../actions/catActions";
 
 export const initialState = {
     catFacts: [],
+    catPic: {},
     isFetchingData: false,
     error: ""
 }
@@ -13,7 +14,8 @@ export const catReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isFetchingData: true,
-                catFacts: []
+                catFacts: [],
+                catPic: {}
             };
         case UPDATE_FACTS:
             return {

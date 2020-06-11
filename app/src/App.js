@@ -7,7 +7,7 @@ import CatForm from "./components/CatForm"
 function App() {
   return (
     <div className="App">
-      <p>Cat Facts!</p>
+      <h1>Cat Facts!</h1>
       <CatForm />
       <FactList />
     </div>

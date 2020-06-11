@@ -9,17 +9,17 @@ const FactList = props => {
 
     //this return will map over the resulting data and return a list of cat facts 
     return (
-        <>
+        <div className="container">
           {props.error ? (
             <div className="error">{props.error}</div>
           ) : (
           props.catFacts.map(fact => 
             <div className= "card">
-                <div key={fact.id}>{fact.text}</div>
+                <p key={fact.id}>{fact.text}</p>
             </div>
           )
          )}  
-        </>
+        </div>
     )
 }
 const mapStateToProps = state => {

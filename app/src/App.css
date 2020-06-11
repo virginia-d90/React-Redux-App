@@ -1,3 +1,6 @@
+html {
+  background-color: #FFDEAD;
+}
 .App {
   text-align: center;
 }
@@ -37,9 +40,19 @@
   }
 }
 
+.container{
+  display: flex;
+  flex-wrap: wrap;
+  
+  
+}
+
 .card{
   margin: 5px;
   width: 45%;
   background-color: aquamarine;
-  
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid black;
+
 }
