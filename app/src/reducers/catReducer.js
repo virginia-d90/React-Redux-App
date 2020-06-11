@@ -1,9 +1,9 @@
-import {FETCH_DATA, UPDATE_FACTS, SET_ERROR } from "../actions/catActions";
+import {FETCH_DATA, UPDATE_FACTS, SET_ERROR, SET_IMG, FETCH_IMG } from "../actions/catActions";
 
 
 export const initialState = {
     catFacts: [],
-    catPic: {},
+    catPic: "",
     isFetchingData: false,
     error: ""
 }
@@ -15,7 +15,6 @@ export const catReducer = (state = initialState, action) => {
                 ...state,
                 isFetchingData: true,
                 catFacts: [],
-                catPic: {}
             };
         case UPDATE_FACTS:
             return {
@@ -29,6 +28,20 @@ export const catReducer = (state = initialState, action) => {
                 isFetchingData: false,
                 error: action.payload 
             };
+        case SET_IMG:
+            return {
+                ...state,
+                isFetchingData:false,
+                catPic: action.payload,
+
+            }
+        case FETCH_IMG:
+            return{
+                ...state,
+                isFetchingData: true,
+                
+            }
+
         
         default: 
             return state

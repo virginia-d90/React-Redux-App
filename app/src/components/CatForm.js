@@ -3,7 +3,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { getData } from "../actions/catActions";
+import { getData, getImg } from "../actions/catActions";
 
 const CatForm = props => {
     //create a handler for getData
@@ -12,10 +12,22 @@ const CatForm = props => {
         props.getData();
     }
 
+    
+
     //in the return the button will need an onclick that links to an axios call
     //button will also produce a fetching data alert of some sort
     return (
         <>
+            {props.isFetchingData ? (
+                 <div>**fetching data...sorry for the paws**</div>
+                 ):(
+                   <img src={props.catPic} alt='random cat' max-width="100px"/>  
+                 )
+
+            }
+            <button onClick={(e) => { e.preventDefault(); 
+                props.getImg();
+            }}>Get Cat Pic</button>
             {props.isFetchingData ? (
                 <div>**fetching data...sorry for the paws**</div>
             ) : (   
@@ -27,8 +39,10 @@ const CatForm = props => {
 }
 const mapStateToProps = state => {
     return {
-        isFetchingData: state.isFetchingData
+        isFetchingData: state.isFetchingData,
+        catPic: state.catPic
+
     }
 }
 
-export default connect(mapStateToProps, { getData })(CatForm);
+export default connect(mapStateToProps, { getData, getImg })(CatForm);
